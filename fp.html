@@ -11,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./fp.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -25,7 +25,7 @@
       <div class="The-header">
         <div class="logo">
           <a href="./index.html">
-            <img src="./Assets/Logo.png" alt="" />
+            <img src="./Assets/Logo_11zon.webp" alt="" />
           </a>
         </div>
         <nav>
@@ -76,12 +76,34 @@
       </ul>
     </div>
 
-     <!-- Footer Section  -->
+    <section class="Table">
+      <div class="login-main" data-aos="fade-up">
+        <form id="form" method="get" action="./error.html" class="login">
+          <div>
+            <h1>Reset Password</h1>
+            <h2>Enter your email to reset Password</h2>
+          </div>
+          <input
+            id="inputEmail"
+            type="email"
+            placeholder="you@gmail.com"
+            required
+          />
+          <span id="span_email" class="span_email"></span>
+          <div class="flex1">
+            <button class="cta-button" type="submit">Reset</button>
+            <a class="cta-button1" href="./sign-in.html">Back to Login</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Section  -->
     <footer data-aos="fade-up">
       <div id="vanta-fr"></div>
       <div class="footer-parent">
         <div class="set1">
-          <img class="logo" src="./Assets/Logo.png" alt="" />
+          <img class="logo" src="./Assets/Logo_11zon.webp" alt="" />
           <p class="footer-para">
             © 2025 <strong>Stackly AI Services</strong> empowers organizations
             with advanced staffing solutions, talent-matching intelligence,
@@ -150,5 +172,56 @@
     </script>
     <script src="./sidebar.js"></script>
     <script src="./footer.js"></script>
+  <script>
+    //   Forms Page
+
+    const Email = document.getElementById("span_email");
+    // const Password1 = document.getElementById("span_password");
+    //   const spError = document.getElementById("span_error");
+    const Form = document.getElementById("form");
+    const InputEmail = document.getElementById("inputEmail");
+    // const InputPassword = document.getElementById("inputPassword");
+
+    Form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const emailvalue = InputEmail.value.trim();
+      // const password2 = InputPassword.value;
+
+      const validEmail = emailvalue.endsWith("@gmail.com");
+
+      // const hasUpper = /[A-Z]/.test(password2);
+      // const hasLower = /[a-z]/.test(password2);
+      // const hasNumber = /[0-9]/.test(password2);
+      // const hasSpecial = /[!@#$%^&*(,.?:{}|<>]/.test(password2);
+      // const ValidPassword = hasLower && hasUpper && hasNumber && hasSpecial;
+
+      if (!validEmail) {
+        Email.textContent =
+          "Please Enter Valid Email Id ending with @gmail.com";
+        return;
+      }
+
+      if (validEmail) {
+        Email.textContent = "";
+      }
+
+      // if (!ValidPassword) {
+      //   Password1.textContent =
+      //     "Enter with Special character , number , uppercase and lowercase (eg:H,@,9,h)";
+      //   return;
+      // }
+
+      // if (ValidPassword) {
+      //   Password1.textContent = "";
+      // }
+
+      Email.textContent = "";
+      // Password1.textContent = "";
+      Form.reset();
+
+      window.location.href = "./error.html";
+    });
+  </script>
   </body>
 </html>

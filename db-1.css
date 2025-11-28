@@ -249,7 +249,6 @@ i {
 body {
   /* background: #0f0f11; */
   /* color: white; */
-  padding: 20px;
 }
 
 header h1 {
@@ -265,6 +264,7 @@ header h1 {
   gap: 20px;
   justify-content: center;
   margin-bottom: 30px;
+  padding: 10px;
 }
 
 .card {
@@ -295,10 +295,11 @@ header h1 {
 
 .chartGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
   margin-top: 20px;
   padding-bottom: 20px;
+  padding: 10px;
 }
 
 .chartBox {
@@ -318,6 +319,18 @@ header h1 {
   height: 300px !important;
 }
 /* ----------- Responsive for 500px to 310px ----------- */
+
+@media screen and (max-width:1200px) {
+    .chartGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:715px) {
+    .chartGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 @media (max-width: 500px) {
   header h1 {
     font-size: 22px;
@@ -341,11 +354,6 @@ header h1 {
 
   .card p {
     font-size: 22px;
-  }
-
-  .chartGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .chartBox {
