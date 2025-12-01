@@ -267,7 +267,7 @@ main {
 main .container {
   width: 100%;
   padding: 30px 20px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 main .container h3 {
